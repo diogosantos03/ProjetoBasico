@@ -10,6 +10,7 @@ public class DriverFactory {
 	public DriverFactory() {
 		
 	}
+	
 	public static WebDriver getDriver() {
 		if(driver == null) {
 			switch (Propriedades.browsers) {
