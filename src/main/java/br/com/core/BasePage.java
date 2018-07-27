@@ -81,6 +81,8 @@ public class BasePage {
 		}
 		return idColuna;
 	}
-	
+	public void clicarLink(String link) {
+		DriverFactory.getDriver().findElement(By.linkText(link)).click();
+	}
 	
 }
