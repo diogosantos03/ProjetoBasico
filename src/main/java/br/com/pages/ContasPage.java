@@ -14,5 +14,9 @@ public class ContasPage extends BasePage {
 	public String obterMsgSucesso() {
 		return getTexto(By.xpath("//div[@class='alert alert-success']"));
 	}
+	public void alterarConta(String string) {
+		 obterCelula("Conta", string, "Ações", "tabelaContas").findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
+		
+	}
 	
 }

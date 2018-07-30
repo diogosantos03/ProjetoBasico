@@ -45,7 +45,12 @@ public class BasePage {
 	}
 	
 	public void clicarBtnTabela(String colunaBusca, String valor, String colunaBtn, String idTabela) {
-		WebElement tabela = DriverFactory.getDriver().findElement(By.xpath("//*[@id='elementosForm:tableUsuarios']"));
+		WebElement celula = obterCelula(colunaBusca, valor, colunaBtn, idTabela);
+		celula.findElement(By.xpath(".//input")).click();
+	}
+	
+	public WebElement obterCelula(String colunaBusca, String valor, String colunaBtn, String idTabela) {
+		WebElement tabela = DriverFactory.getDriver().findElement(By.xpath("//*[@id='"+idTabela+"']"));
 		obterIndiceColuna(colunaBusca, tabela);
 		
 		int idColuna = obterIndiceColuna(colunaBusca, tabela);
@@ -55,9 +60,9 @@ public class BasePage {
 		int idColunaBotao = obterIndiceColuna(colunaBtn, tabela);
 		
 		WebElement celula = tabela.findElement(By.xpath(".//tr["+idLinha+"]/td["+idColunaBotao+"]"));
-		celula.findElement(By.xpath(".//input")).click();
+		return celula;  	 	
 	}
-
+	
 	public int obterIndiceLinha(String valor, WebElement tabela, int idColuna) {
 		List<WebElement> linhas = tabela.findElements(By.xpath("./tbody/tr/td["+idColuna+"]"));
 		int idlinha = -1;
