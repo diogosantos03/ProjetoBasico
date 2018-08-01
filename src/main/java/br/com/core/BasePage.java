@@ -89,5 +89,8 @@ public class BasePage {
 	public void clicarLink(String link) {
 		DriverFactory.getDriver().findElement(By.linkText(link)).click();
 	}
+	public void clicarBotaoPorTexto(String txt) {
+		clicar(By.xpath("//button[.='"+txt+"']"));
+	}
 	
 }

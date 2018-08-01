@@ -9,7 +9,7 @@ public class ContasPage extends BasePage {
 		escrever("nome", nome);
 	}
 	public void salvar() {
-		clicar(By.xpath("//button[.='Salvar']"));
+		clicarBotaoPorTexto("Salvar");
 	}
 	public String obterMsgSucesso() {
 		return getTexto(By.xpath("//div[@class='alert alert-success']"));
