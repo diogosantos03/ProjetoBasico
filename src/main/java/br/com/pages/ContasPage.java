@@ -18,5 +18,8 @@ public class ContasPage extends BasePage {
 		 obterCelula("Conta", string, "Ações", "tabelaContas").findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
 		
 	}
+	public String obterMsgErro() {
+		return getTexto(By.xpath("//div[@class='alert alert-danger']"));
+	}
 	
 }
