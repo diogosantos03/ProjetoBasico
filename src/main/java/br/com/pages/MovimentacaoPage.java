@@ -1,8 +1,13 @@
 package br.com.pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import br.com.core.BasePage;
+import br.com.core.DriverFactory;
 
 public class MovimentacaoPage extends BasePage{
 	
@@ -38,6 +43,15 @@ public class MovimentacaoPage extends BasePage{
 	
 	public String obterMsgSucesso() {
 		return getTexto(By.xpath("//div[@class='alert alert-success']"));
+	}
+	
+	public List<String> obterErros(){
+		List<WebElement> erros = DriverFactory.getDriver().findElements(By.xpath("//div[@class='alert alert-danger']//li"));
+		List<String> itensRetorno = new ArrayList<String>();
+		for(WebElement e: erros) {
+			itensRetorno.add(e.getText());
+		}
+		return itensRetorno;
 	}
 
 }
