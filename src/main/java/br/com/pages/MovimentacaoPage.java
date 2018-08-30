@@ -46,7 +46,11 @@ public class MovimentacaoPage extends BasePage{
 	}
 	
 	public List<String> obterErros(){
+<<<<<<< HEAD
 		List<WebElement> erros = DriverFactory.getDriver().findElements(By.xpath("//div[@class='alert alert-success']"));
+=======
+		List<WebElement> erros = DriverFactory.getDriver().findElements(By.xpath("//div[@class='alert alert-danger']//li"));
+>>>>>>> ba7ff3ca4acad6832b0edaf6c8b6d86175ad1c72
 		List<String> itensRetorno = new ArrayList<String>();
 		for(WebElement e: erros) {
 			itensRetorno.add(e.getText());

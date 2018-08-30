@@ -24,8 +24,13 @@ public class BaseTest {
 		System.setProperty("webdriver.gecko.driver", "/home/diogo/Documentos/Curso_Selenium/Gecko_Drive/geckodriver");
 
 		page.acessarTelaInicial();
+<<<<<<< HEAD
 		page.setEmail("diogo.santosgts@hotmail.com");
 		page.setSenha("1234");
+=======
+		page.setEmail("diogo@hotmail.com");
+		page.setSenha("diogo");
+>>>>>>> ba7ff3ca4acad6832b0edaf6c8b6d86175ad1c72
 		page.entrar();
 	}
 	

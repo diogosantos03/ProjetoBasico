@@ -52,6 +52,7 @@ public class MovimentacaoTest extends BaseTest {
 		assertEquals(6,erros.size());
 	}
 	
+<<<<<<< HEAD
 	@Test
 	public void testInserirMovimentaoFutura(){
 		menuPage.acessarTelaInserirMovimentacao();
@@ -71,4 +72,6 @@ public class MovimentacaoTest extends BaseTest {
 		assertEquals(1,erros.size());
 	}
 	
+=======
+>>>>>>> ba7ff3ca4acad6832b0edaf6c8b6d86175ad1c72
 }
