@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -12,6 +13,7 @@ import org.junit.Test;
 import br.com.core.BaseTest;
 import br.com.pages.MenuPage;
 import br.com.pages.MovimentacaoPage;
+import br.com.utils.DataUtils;
 
 public class MovimentacaoTest extends BaseTest {
 	private MenuPage menuPage = new MenuPage();
@@ -52,13 +54,16 @@ public class MovimentacaoTest extends BaseTest {
 		assertEquals(6,erros.size());
 	}
 	
-<<<<<<< HEAD
+
 	@Test
 	public void testInserirMovimentaoFutura(){
 		menuPage.acessarTelaInserirMovimentacao();
 		
-		movPage.setDataMovimentacao("01/09/2017");
-		movPage.setDataPagamento("01/09/2017");
+		Date datafutura = DataUtils.obterDataComDiferencasDias(5);
+		
+		
+		movPage.setDataMovimentacao(DataUtils.obterDataFormatada(datafutura));
+		movPage.setDataPagamento(DataUtils.obterDataFormatada(datafutura));
 		movPage.setDescricao("Descrição qualquer");
 		movPage.setInteressado("Diogo");
 		movPage.setValor("50000");
@@ -67,11 +72,10 @@ public class MovimentacaoTest extends BaseTest {
 		
 		movPage.clicarBotaoPorTexto("Salvar");
 		List<String> erros = movPage.obterErros();
-		//assertTrue(erros.contains("Movimentação adicionada com sucesso!"));
+		//assertTrue(erros.contains("Data da Movimentação deve ser menor ou igual à data atual"));
 		System.out.println(erros.toString());
 		assertEquals(1,erros.size());
 	}
 	
-=======
->>>>>>> ba7ff3ca4acad6832b0edaf6c8b6d86175ad1c72
+
 }
