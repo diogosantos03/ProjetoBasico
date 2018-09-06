@@ -22,7 +22,7 @@ public class BaseTest {
 	@Before
 	public void inicializa() {
 		System.setProperty("webdriver.gecko.driver", "/home/diogo/Documentos/Curso_Selenium/Gecko_Drive/geckodriver");
-
+		
 		page.acessarTelaInicial();
 		page.setEmail("diogo.santosgts@hotmail.com");
 		page.setSenha("1234");
