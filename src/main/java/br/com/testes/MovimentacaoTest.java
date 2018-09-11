@@ -8,55 +8,58 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import br.com.core.BaseTest;
 import br.com.pages.MenuPage;
 import br.com.pages.MovimentacaoPage;
 import br.com.utils.DataUtils;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTest extends BaseTest {
 	private MenuPage menuPage = new MenuPage();
 	private MovimentacaoPage movPage = new MovimentacaoPage();
 	
 	@Test
-	public void testInserirMovimentacao() {
+	public void test1_InserirMovimentacao() {
 		menuPage.acessarTelaInserirMovimentacao();
 		
 		movPage.setDataMovimentacao(DataUtils.obterDataFormatada(new Date()));
 		movPage.setDataPagamento(DataUtils.obterDataFormatada(new Date()));
-		movPage.setDescricao("DescriÃ§Ã£o qualquer");
+		movPage.setDescricao("Descrição qualquer");
 		movPage.setInteressado("Diogo");
 		movPage.setValor("50000");
-		movPage.setConta("Conta1");
+		movPage.setConta("Conta1Alterada");
 		movPage.setStatusPago();
 		
 		movPage.clicarBotaoPorTexto("Salvar");
 		
-		assertEquals("MovimentaÃ§Ã£o adicionada com sucesso!",movPage.obterMsgSucesso());
+		assertEquals("Movimentação adicionada com sucesso!",movPage.obterMsgSucesso());
 	}
 	
 	@Test
-	public void testCamposObrigatorios() {
+	public void test2_CamposObrigatorios() {
 		menuPage.acessarTelaInserirMovimentacao();
 		
 		movPage.clicarBotaoPorTexto("Salvar");
 		List<String> erros = movPage.obterErros();
 		
 		assertTrue(erros.containsAll(Arrays.asList(
-				"Data da MovimentaÃ§Ã£o Ã© obrigatÃ³rio",
-				"Data do pagamento Ã© obrigatÃ³rio",
-				"DescriÃ§Ã£o Ã© obrigatÃ³rio",
-				"Interessado Ã© obrigatÃ³rio",
-				"Valor Ã© obrigatÃ³rio",
-				"Valor deve ser um nÃºmero"
+				"Data da Movimentação é obrigatório",
+				"Data do pagamento é obrigatório",
+				"Descrição é obrigatório",
+				"Interessado é obrigatório",
+				"Valor é obrigatório",
+				"Valor deve ser um número"
 				)));
 		assertEquals(6,erros.size());
 	}
 	
 
 	@Test
-	public void testInserirMovimentaoFutura(){
+	public void test3_InserirMovimentaoFutura(){
 		menuPage.acessarTelaInserirMovimentacao();
 		
 		Date datafutura = DataUtils.obterDataComDiferencasDias(5);
@@ -64,10 +67,10 @@ public class MovimentacaoTest extends BaseTest {
 		
 		movPage.setDataMovimentacao(DataUtils.obterDataFormatada(datafutura));
 		movPage.setDataPagamento(DataUtils.obterDataFormatada(datafutura));
-		movPage.setDescricao("DescriÃ§Ã£o qualquer");
+		movPage.setDescricao("Descrição qualquer");
 		movPage.setInteressado("Diogo");
 		movPage.setValor("50000");
-		movPage.setConta("Conta1");
+		movPage.setConta("Conta1Alterada");
 		movPage.setStatusPago();
 		
 		movPage.clicarBotaoPorTexto("Salvar");
