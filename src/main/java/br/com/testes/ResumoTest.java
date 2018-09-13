@@ -2,9 +2,15 @@ package br.com.testes;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
+import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 
 import br.com.core.BaseTest;
 import br.com.core.DriverFactory;
@@ -28,5 +34,8 @@ public class ResumoTest extends BaseTest{
 	public void test2_ResumoMensal() {
 		menuPage.acessarTelaResumo();
 		assertEquals("Seu Barriga - Extrato", DriverFactory.getDriver().getTitle());
+		List<WebElement> elementos = DriverFactory.getDriver().findElements(By.xpath("//*[id='tabelaExtrato']/tbody/tr"));
+		assertEquals(0, elementos.size());
+			
 	}
 }
