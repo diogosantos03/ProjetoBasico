@@ -11,10 +11,9 @@ import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import br.com.pages.LoginPage;
+
 
 public class BaseTest {
-	private LoginPage page = new LoginPage();
 	
 	@Rule
 	public TestName testName = new TestName();
@@ -24,11 +23,11 @@ public class BaseTest {
 		//System.setProperty("webdriver.gecko.driver", "/home/diogo/Documentos/Curso_Selenium/Gecko_Drive/geckodriver");
 		System.setProperty("webdriver.gecko.driver", "C:/eclipse/geckodriver/geckodriver.exe");
 		
-		page.acessarTelaInicial();
-		page.setEmail("diogo@hotmail.com");
-		page.setSenha("1234");
-		
-		page.entrar();
+//		page.acessarTelaInicial();
+//		page.setEmail("diogo@hotmail.com");
+//		page.setSenha("1234");
+//		
+//		page.entrar();
 	}
 	
 	@After

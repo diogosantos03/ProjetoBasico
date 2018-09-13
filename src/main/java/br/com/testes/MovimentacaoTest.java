@@ -30,7 +30,7 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setDataPagamento(DataUtils.obterDataFormatada(new Date()));
 		movPage.setDescricao("Descrição qualquer");
 		movPage.setInteressado("Diogo");
-		movPage.setValor("50000");
+		movPage.setValor("50000.00");
 		movPage.setConta("Conta1Alterada");
 		movPage.setStatusPago();
 		
