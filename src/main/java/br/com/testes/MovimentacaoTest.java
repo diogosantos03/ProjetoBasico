@@ -8,16 +8,14 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
 import br.com.core.BaseTest;
 import br.com.pages.MenuPage;
 import br.com.pages.MovimentacaoPage;
 import br.com.utils.DataUtils;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTest extends BaseTest {
 	private MenuPage menuPage = new MenuPage();
 	private MovimentacaoPage movPage = new MovimentacaoPage();

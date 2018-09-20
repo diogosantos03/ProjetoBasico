@@ -17,4 +17,11 @@ public class LoginPage extends BasePage {
 	public void entrar() {
 		clicarBotaoPorTexto("Entrar");
 	}
+	
+	public void resetar() {
+		clicarLink("reset");
+		DriverFactory.killDriver();
+	}
+	
+	
 }

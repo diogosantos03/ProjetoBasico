@@ -1,12 +1,10 @@
 package br.com.testes;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -15,7 +13,7 @@ import br.com.core.DriverFactory;
 import br.com.pages.MenuPage;
 import br.com.pages.ResumoPage;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ResumoTest extends BaseTest{
 	private MenuPage menuPage = new MenuPage();
 	private ResumoPage resumoPage = new ResumoPage();
