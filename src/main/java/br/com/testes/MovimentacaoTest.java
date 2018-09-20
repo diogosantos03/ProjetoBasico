@@ -31,7 +31,7 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setDescricao("Descrição qualquer");
 		movPage.setInteressado("Diogo");
 		movPage.setValor("50000.00");
-		movPage.setConta("Conta1Alterada");
+		movPage.setConta("Conta para movimentacoes");
 		movPage.setStatusPago();
 		
 		movPage.clicarBotaoPorTexto("Salvar");
@@ -69,8 +69,8 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setDataPagamento(DataUtils.obterDataFormatada(datafutura));
 		movPage.setDescricao("Descrição qualquer");
 		movPage.setInteressado("Diogo");
-		movPage.setValor("50000");
-		movPage.setConta("Conta1Alterada");
+		movPage.setValor("50000.00");
+		movPage.setConta("Conta para movimentacoes");
 		movPage.setStatusPago();
 		
 		movPage.clicarBotaoPorTexto("Salvar");
